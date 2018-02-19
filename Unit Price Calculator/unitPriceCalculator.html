@@ -1,0 +1,273 @@
+<!-- 
+;==========================================
+; Title:  Unit Price Calculator
+; Author: Valerie Lamm
+; Website: valerielamm.com
+; Date:   9 Jan 2017
+;==========================================
+-->
+<div class="center">
+    <div class="calculator-container">
+        <div id="howmanybox">
+            <div id="up" onclick="upFunction()"> </div>
+            <div id="howmany">
+                <a id="counter">3</a>
+            </div>
+            <div id="down" onclick="downFunction()"> </div> 
+        </div>
+        <div class="pc-title"> Unit Price Calculator</div> 
+        <div class="pc-categories"> 
+            <div class="pc-1"> How Many </div>
+            <div class="pc-2"> Total Cost </div>
+            <div class="pc-3"> Unit Price </div>
+        </div>
+        <table id="myTable">
+            <tr>
+                <td><input value='0' id='amount3' onkeyup="calculated3()"/></td> 
+                <td><input value='0' id='cost3' onkeyup="calculated3()"/></td> 
+                <td id="price-box2"> <b id='price3'>...</b> </td>
+            </tr>
+            <tr>
+                <td><input value='0' id='amount2' onkeyup="calculated2()"/></td> 
+                <td><input value='0' id='cost2' onkeyup="calculated2()"/></td> 
+                <td id="price-box2"> <b id='price2'>...</b> </td>
+            </tr>
+            <tr>
+                <td><input value='0' id='amount' onkeyup="calculated()"/></td> 
+                <td><input value='0' id='cost' onkeyup="calculated()"/></td> 
+                <td id="price-box2"> <div class="price-box"> <b id='price'>...</b> </div> </td>
+            </tr>
+        </table> 
+        <br>
+    </div>
+</div>
+
+
+<!--functionality-->
+<script>
+    document.getElementById("counter").style.color = '#EFEFEF';   
+
+    //Holds value for number of rows
+    var counter = 3; 
+    
+    //Adding a row
+    function upFunction() { 
+        //Max amount of 5 rows
+        if (counter<5){
+            if (counter===1){ 
+                counter++; //Counts up
+                document.getElementById("counter").innerHTML = counter; //Diplays adjusted count
+                var table = document.getElementById("myTable"); //Finds table
+                var row = table.insertRow(0); //Adds rows
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "<input value='0' id='amount2' onkeyup='calculated2()' />";
+                cell2.innerHTML = "<input value='0' id='cost2' onkeyup='calculated2()' />";
+                cell3.innerHTML = "<b id='price2'>...</b>";
+                cell3.style.backgroundColor = "#999999";
+                cell3.style.paddingLeft = "2%";
+             }
+            else if (counter===2){
+                counter++;
+                document.getElementById("counter").innerHTML = counter;
+                var table = document.getElementById("myTable"); 
+                var row = table.insertRow(0); 
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "<input value='0' id='amount3' onkeyup='calculated3()' />";
+                cell2.innerHTML = "<input value='0' id='cost3' onkeyup='calculated3()' />";
+                cell3.innerHTML = "<b id='price3'>...</b>";
+                cell3.style.backgroundColor = "#999999";
+                cell3.style.paddingLeft = "2%";
+              }
+            else if (counter===3){
+                counter++;
+                document.getElementById("counter").innerHTML = counter;
+                var table = document.getElementById("myTable"); 
+                var row = table.insertRow(0); 
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "<input value='0' id='amount4' onkeyup='calculated4()' />";
+                cell2.innerHTML = "<input value='0' id='cost4' onkeyup='calculated4()' />";
+                cell3.innerHTML = "<b id='price4'>...</b>";
+                cell3.style.backgroundColor = "#999999";
+                cell3.style.paddingLeft = "2%";
+              }
+            else {
+                counter++;
+                document.getElementById("counter").innerHTML = counter;
+                var table = document.getElementById("myTable"); 
+                var row = table.insertRow(0); 
+                var cell1 = row.insertCell(0);
+                var cell2 = row.insertCell(1);
+                var cell3 = row.insertCell(2);
+                cell1.innerHTML = "<input value='0' id='amount5' onkeyup='calculated5()' />";
+                cell2.innerHTML = "<input value='0' id='cost5' onkeyup='calculated5()' />";
+                cell3.innerHTML = "<b id='price5'>...</b>";
+                cell3.style.backgroundColor = "#999999"; 
+                cell3.style.paddingLeft = "2%";
+              }
+         }
+    }
+    
+    //Removing a row
+    function downFunction() {
+        //Must be at least 1 row at all times
+        if (counter>1){
+            counter--; //Counts down
+            document.getElementById("counter").innerHTML = counter; //Displays countdown
+            var table = document.getElementById("myTable"); //Finds table
+            var row = table.deleteRow(0); //Deletes row in table
+        }
+    }
+    
+    //Functionality 
+    
+    //Row 1 calculations
+    function calculated(){
+        var amount = document.getElementById('amount').value; //Gets amount
+        var cost = document.getElementById('cost').value;   //Gets cost
+        var price = (cost/amount); //Calculates and assigns price
+        price = price.toFixed(5); //Restricts price decimal place
+        document.getElementById('price').innerHTML = price; //Displays price
+    }
+    
+    //Row 2 calculations
+    function calculated2(){
+        var amount2 = document.getElementById('amount2').value; var cost2 = document.getElementById('cost2').value;
+        var price2 = (cost2/amount2);
+        price2 = price2.toFixed(5); 
+        document.getElementById('price2').innerHTML = price2; 
+    }
+    
+    //Row 3 calculations
+    function calculated3(){
+        var amount3 = document.getElementById('amount3').value; var cost3 = document.getElementById('cost3').value;
+        var price3 = (cost3/amount3);
+        price3 = price3.toFixed(5); 
+        document.getElementById('price3').innerHTML = price3; 
+    }
+    
+    //Row 4 calculations
+    function calculated4(){
+        var amount4 = document.getElementById('amount4').value; var cost4 = document.getElementById('cost4').value;
+        var price4 = (cost4/amount4);
+        price4 = price4.toFixed(5); 
+        document.getElementById('price4').innerHTML = price4; 
+    }
+    
+    //Row 5 calculations
+    function calculated5(){
+        var amount5 = document.getElementById('amount5').value; var cost5 = document.getElementById('cost5').value;
+        var price5 = (cost5/amount5);
+        price5 = price5.toFixed(5); 
+        document.getElementById('price5').innerHTML = price5; 
+    } 
+</script>
+
+
+<style>   
+    
+body { font-family: Helvetica; }
+.center {
+    width:100%;  
+    text-align: center;
+}
+.calculator-container {
+    display: inline-block; 
+    margin: 1em;
+    background-color: #999999;
+    line-height: 0;
+}
+#up {
+    width: 0;
+    height: 0;
+    border-left: .4em solid transparent; 
+    border-right: .4em solid transparent; 
+    border-bottom: .5em solid #EFEFEF; 
+    cursor: pointer;
+}
+#down {
+    width: 0;
+    height: 0;
+    border-left: .4em solid transparent; 
+    border-right: .4em solid transparent; 
+    border-top: .5em solid #EFEFEF; 
+    cursor: pointer;
+}
+#howmany { 
+    margin-top:.4em; 
+    margin-left:.1em; 
+    height: 1.6em; 
+    width: .5em;
+}
+#howmanybox{   
+    width:1.7em; 
+    padding-left:1em;
+    padding-top: .6em; 
+    float:left;
+    height:3.5em; 
+    line-height: 1;}
+td { margin: .2%; }
+#price3, #price, #price2, #price4, #price5 { 
+    color:#EFEFEF;
+    font-weight:normal;
+    font-size:.8em;
+    padding-left:.3em;
+    width:7.5em; 
+}
+.price-box {
+    width:5.6em; 
+}
+#price-box2{
+    background-color: #999999;
+    padding-left: 2%;
+}
+input {
+    border:none; 
+    padding: .4em 0 .4em .6em;
+    width:8.68em; 
+    background-color:#999999;
+    color:#EFEFEF; 
+    font-size:.7em;
+}
+input:focus {
+    outline:none; 
+}
+table {
+    background-color: #8c8c8c; 
+}
+.pc-categories{ 
+    background-color:#8c8c8c; 
+    width:18.75em; 
+    padding-top:.2em; 
+    padding-bottom:1.7em; 
+    line-height: 1;
+}
+.pc-1, .pc-2, .pc-3  { 
+    float: left; 
+    color:#EFEFEF;
+    margin-left:.0%; 
+    padding-top:.5em; 
+    padding-bottom:.4em; 
+    padding-left:.2.05%; 
+    padding-right: 2.8%;
+    width:30%; 
+    font-size: .9em;
+}
+.pc-title{
+    height:2.39em; 
+    font-size:1.2em; 
+    font-weight: 500;
+    width:11.6em; 
+    padding-left:4em; 
+    padding-top:1.15em; 
+    color:#EFEFEF; 
+    line-height: 1;
+    text-align: left;
+}
+
+</style>
