@@ -1,6 +1,4 @@
 
-# Globals
-import variables
 
 # Intro
 def introductions(self):
@@ -54,3 +52,24 @@ def question_one_no(self):
 def stage_one(self):
     self.message = self.label_bun.get() + " is ready to start their journey."
     self.label_text.set(self.message)
+    self.yes_button.configure(text="Continue", command=self.create_window)
+
+def create_window(self):
+    self.yes_button.configure(text="Continue", command=self.stage_two)
+    self.top.deiconify()
+    self.top.wm_title("Draw " + self.label_bun.get())
+
+
+def stage_two(self):
+    self.label.config(height=7)
+    self.image3.grid(row=1, column=0, columnspan=2, sticky="w" + "e")
+    self.message = self.label_bun.get() + " looks great."
+    self.label_text.set(self.message)
+    self.yes_button.configure(text="Thanks.", command=self.stage_three)
+
+def stage_three(self):
+    self.label.config(height=20)
+    self.image3.grid_forget()
+    self.message = "Okay, here we go."
+    self.label_text.set(self.message)
+    self.yes_button.configure(text="Let's go.")

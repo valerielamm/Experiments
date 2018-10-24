@@ -8,7 +8,8 @@ Usage:
 from setuptools import setup
 
 APP = ['MyApplication.py']
-DATA_FILES = []
+APP_NAME = "golden"
+DATA_FILES = ["drawing.png"]
 OPTIONS = {}
 
 setup(
