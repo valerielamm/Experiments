@@ -82,6 +82,56 @@ def _run():
     exec(compile(source, path, 'exec'), globals(), globals())
 
 
+def _recipes_pil_prescript(plugins):
+    try:
+        import Image
+        have_PIL = False
+    except ImportError:
+        from PIL import Image
+        have_PIL = True
+
+    import sys
+
+    def init():
+        if Image._initialized >= 2:
+            return
+
+        if have_PIL:
+            try:
+                import PIL.JpegPresets
+                sys.modules['JpegPresets'] = PIL.JpegPresets
+            except ImportError:
+                pass
+
+        for plugin in plugins:
+            try:
+                if have_PIL:
+                    try:
+                        # First try absolute import through PIL (for
+                        # Pillow support) only then try relative imports
+                        m = __import__(
+                            'PIL.' + plugin, globals(), locals(), [])
+                        m = getattr(m, plugin)
+                        sys.modules[plugin] = m
+                        continue
+                    except ImportError:
+                        pass
+
+                __import__(plugin, globals(), locals(), [])
+            except ImportError:
+                if Image.DEBUG:
+                    print('Image: failed to import')
+
+        if Image.OPEN or Image.SAVE:
+            Image._initialized = 2
+            return 1
+
+    Image.init = init
+
+
+_recipes_pil_prescript(['SpiderImagePlugin', 'PngImagePlugin', 'GbrImagePlugin', 'TgaImagePlugin', 'GifImagePlugin', 'WmfImagePlugin', 'SunImagePlugin', 'PcdImagePlugin', 'DcxImagePlugin', 'PalmImagePlugin', 'IptcImagePlugin', 'MpoImagePlugin', 'PsdImagePlugin', 'MspImagePlugin', 'DdsImagePlugin', 'FpxImagePlugin', 'GribStubImagePlugin', 'XVThumbImagePlugin', 'SgiImagePlugin', 'McIdasImagePlugin', 'XbmImagePlugin', 'FitsStubImagePlugin', 'PpmImagePlugin', 'Hdf5StubImagePlugin', 'MpegImagePlugin', 'BlpImagePlugin', 'ImImagePlugin', 'JpegImagePlugin', 'IcnsImagePlugin', 'CurImagePlugin', 'FliImagePlugin', 'PcxImagePlugin', 'Jpeg2KImagePlugin', 'PdfImagePlugin', 'TiffImagePlugin', 'BufrStubImagePlugin', 'BmpImagePlugin', 'EpsImagePlugin', 'PixarImagePlugin', 'FtexImagePlugin', 'MicImagePlugin', 'IcoImagePlugin', 'WebPImagePlugin', 'ImtImagePlugin', 'XpmImagePlugin'])
+
+
 def _setup_ctypes():
     from ctypes.macholib import dyld
     import os
