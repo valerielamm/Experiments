@@ -1,4 +1,5 @@
-
+import PIL
+from PIL import Image, ImageDraw, ImageTk
 
 # Intro
 def introductions(self):
@@ -32,6 +33,7 @@ def question_one_yes(self):
 
 def question_one_end(self):
     self.b_name = self.name.get()
+    self.b_name = self.b_name.capitalize()  # Capitalize that name!
     self.label_bun.set(self.b_name)
     self.name.destroy()
     self.message = "All right, " + self.label_bun.get() + " it is."
@@ -59,6 +61,30 @@ def create_window(self):
     self.top.deiconify()
     self.top.wm_title("Draw " + self.label_bun.get())
 
+def drawing_setup(self):
+    self.old_x = None
+    self.old_y = None
+    self.line_width = 15
+    self.color = 'black'
+    self.c.bind('<B1-Motion>', self.paint)
+    self.c.bind('<ButtonRelease-1>', self.reset)
+
+def paint(self, event):
+    self.line_width = 15
+    paint_color = self.color
+    if self.old_x and self.old_y:
+        self.c.create_line(self.old_x, self.old_y, event.x, event.y,
+                           width=self.line_width, fill=paint_color,
+                           capstyle='round')
+        #  --- PIL
+        draw = ImageDraw.Draw(self.image1)
+        draw.line((self.old_x, self.old_y, event.x, event.y), width=5, fill='black')
+
+    self.old_x = event.x
+    self.old_y = event.y
+
+def reset(self, event):
+    self.old_x, self.old_y = None, None
 
 def stage_two(self):
     self.label.config(height=7)
@@ -66,10 +92,26 @@ def stage_two(self):
     self.message = self.label_bun.get() + " looks great."
     self.label_text.set(self.message)
     self.yes_button.configure(text="Thanks.", command=self.stage_three)
+    self.no_button.configure(text="I guess.", command=self.stage_three, state="normal")
 
 def stage_three(self):
     self.label.config(height=20)
     self.image3.grid_forget()
-    self.message = "Okay, here we go."
+    self.message = "Do you think " + self.label_bun.get() + " looks great?"
+    self.label_text.set(self.message)
+    self.yes_button.configure(text="Yes.", command=self.stage_four)
+    self.no_button.configure(text="Not really.", command=self.stage_three_fail)
+
+def stage_three_fail(self):
+    self.message = self.label_bun.get() + " overheard you. \n They lost their confidence " \
+                                          "and have decided to just stay in their cage."
+    self.label_text.set(self.message)
+    self.yes_button.configure(state="disabled")
+    self.no_button.configure(state="disabled", text=" ")
+
+def stage_four(self):
+    self.message = self.label_bun.get() + " overheard you. \nThey gained more confidence " \
+                                          "and have decided to go with you."
     self.label_text.set(self.message)
     self.yes_button.configure(text="Let's go.")
+    self.no_button.configure(text=" ")
