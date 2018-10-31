@@ -5,12 +5,12 @@ from PIL import Image, ImageDraw, ImageTk
 def introductions(self):
     self.message = "\n\nBunny Tales: The Golden Carrot\
         \nThere once was a bunny that was trapped in a cage.\
-        \nHis owner used to feed him all kinds of treats. \
-        \nHe used to get carrots, kale, broccoli, and sweet\
-        \ngrasses. One day his owner stopped bringing him\
-        \nall the tasty foods. All he got was lettuce.\
-        \nHe spent every day mindlessly eating the tasteless\
-        \nlettuce. Every night, he dreamt of the tale of the\
+        \nTheir owner used to feed them all kinds of treats. \
+        \nThey used to get carrots, kale, broccoli, and sweet\
+        \ngrasses. One day their owner stopped bringing them\
+        \nall the tasty foods. All they got was lettuce.\
+        \nThey spent every day mindlessly eating the tasteless\
+        \nlettuce. Every night, they dreamt of the tale of the\
         \ngolden carrot..."
     self.label_text.set(self.message)
     self.yes_button.configure(text="Continue", command=self.question_one)
@@ -45,8 +45,8 @@ def question_one_end(self):
 
 def question_one_no(self):
     self.message = "The bunny never gathered the courage to go \
-               \nafter the golden carrot. He spent the rest\
-               \nof his days sad over what could\'ve been"
+               \nafter the golden carrot. They spent the rest\
+               \nof their days sad over what could\'ve been"
     self.label_text.set(self.message)
     self.yes_button.configure(state="disabled")
     self.no_button.configure(state="disabled")
@@ -113,5 +113,23 @@ def stage_four(self):
     self.message = self.label_bun.get() + " overheard you. \nThey gained more confidence " \
                                           "and have decided to go with you."
     self.label_text.set(self.message)
-    self.yes_button.configure(text="Let's go.")
-    self.no_button.configure(text=" ")
+    self.yes_button.configure(text="Let's go.", command=self.stage_five)
+    self.no_button.configure(text=" ", state="disabled")
+
+def item_list(self):
+    for i in range(len(self.items)):
+        if i == (len(self.items)-1):
+            self.message = self.message + "and " + self.items[i] + "."
+        else:
+            self.message = self.message + self.items[i] + ", "
+
+def stage_five(self):
+    self.message = "The cat walked in the room and hissed at you." \
+                   "\n You need to throw something at it.\n" + \
+                   self.label_bun.get() + " looked in their pocket. \n" \
+                                          "They have "
+    self.item_list()
+    self.message = self.message + "\nWhat should " + self.label_bun.get() + " throw?"
+    self.label_text.set(self.message)
+    self.yes_button.configure(text="The lettuce.", state="disabled")
+    self.no_button.configure(text="The pebble.", state="disabled")
