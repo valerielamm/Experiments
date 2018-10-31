@@ -52,9 +52,8 @@ class GuessingGame:
         self.yes_button.grid(row=2, column=1, sticky=W + E)
         self.yes_button.config(highlightbackground="#d8dad9", highlightcolor="#d8dad9")
 
-        # Options
-        self.option_one = True
-        self.option_two = True
+        # Items
+        self.items = ['lettuce', 'a pebble']
 
         # Drawing
         self.top = Toplevel()
@@ -92,6 +91,8 @@ class GuessingGame:
     reset = reset
     stage_three_fail = stage_three_fail
     stage_four = stage_four
+    stage_five = stage_five
+    item_list = item_list
 
 my_gui = GuessingGame(root)
 root.config(background="#f0f5f5", padx=20, pady=20)
