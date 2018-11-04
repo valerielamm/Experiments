@@ -1,0 +1,48 @@
+div.sp-location-weather-widget {
+    text-align: left;
+    padding: 10px 20px 20px 20px;
+}
+
+div.sp-location-weather-widget img {
+    margin-left: 10px;
+    border-radius: 0;
+    box-shadow: 0 0 0;
+}
+
+div.sp-location-weather-widget span {
+    display: block;
+}
+
+div.sp-location-weather-widget .weather-type {
+    margin-top: -20px;
+    color: #404040 !important;
+    text-transform: none !important;
+    font-size: 12px;
+}
+
+div.sp-location-weather-widget .weather-temp {
+    font-size: 60px;
+    font-weight: 700;
+    color: #525b6e;
+    line-height: 80px;
+}
+
+div.sp-location-weather-widget .weather-date {
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+div.sp-location-weather-widget .weather-region {
+    font-size: 12px;
+}
+
+#sp_location_weather_widget_content-2 {
+    border-left: #404040 solid 4pt;
+    border-right: #404040 solid 4pt;
+    padding: 10pt;
+}
+
+#sp_location_weather_widget_content-2 .widget-title{
+    padding-left: 20px;
+}
