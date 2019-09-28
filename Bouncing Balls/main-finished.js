@@ -1,3 +1,8 @@
+// setup ball Count
+
+var paragraph = document.querySelector('p');
+var count = 0;
+
 // setup canvas
 
 var canvas = document.querySelector('canvas');
@@ -97,6 +102,8 @@ EvilCircle.prototype.collisionDetect = function() {
 
       if (distance < this.size + balls[j].size) {
         balls[j].exists = false;
+        count--;
+        paragraph.textContent = 'Ball count: ' + count;
       }
     }
   }
@@ -168,6 +175,8 @@ while(balls.length < 25) {
     true
   );
   balls.push(ball);
+  count++;
+  paragraph.textContent = 'Ball count: ' + count;
 }
 
 // define loop that keeps drawing the scene constantly
