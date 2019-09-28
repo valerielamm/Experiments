@@ -35,7 +35,7 @@ function Ball(x, y, velX, velY, color, size, exists) {
 
 function EvilCircle(x, y, exists){
     Shape.call(this, x, y, 20, 20, exists);
-    this.color = white;
+    this.color = "white";
     this.size = 10;
 }
 
