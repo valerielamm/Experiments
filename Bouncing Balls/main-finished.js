@@ -49,6 +49,26 @@ EvilCircle.prototype.draw = function() {
   ctx.lineWidth = 3;
 };
 
+// define EvilCircle boundary method
+
+Ball.prototype.update = function() {
+  if((this.x + this.size) >= width) {
+    this.velX = -(this.size);
+  }
+
+  if((this.x - this.size) <= 0) {
+    this.velX = -(this.size);
+  }
+
+  if((this.y + this.size) >= height) {
+    this.velY = -(this.size);
+  }
+
+  if((this.y - this.size) <= 0) {
+    this.velY = -(this.size);
+  }
+};
+
 // define ball draw method
 
 Ball.prototype.draw = function() {
