@@ -39,6 +39,16 @@ function EvilCircle(x, y, exists){
     this.size = 10;
 }
 
+// define EvilCircle method
+
+EvilCircle.prototype.draw = function() {
+  ctx.beginPath();
+  ctx.strokeStyle = this.color;
+  ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+  ctx.stroke();
+  ctx.lineWidth = 3;
+};
+
 // define ball draw method
 
 Ball.prototype.draw = function() {
