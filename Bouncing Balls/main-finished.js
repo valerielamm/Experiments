@@ -13,13 +13,20 @@ function random(min,max) {
   return num;
 }
 
-// define Ball constructor
+// define Shape constructor
 
-function Ball(x, y, velX, velY, color, size) {
+function Shape(x, y, velX, velY, exists) {
   this.x = x;
   this.y = y;
   this.velX = velX;
   this.velY = velY;
+  this.exists = exists;
+}
+
+// define Ball constructor
+
+function Ball(x, y, velX, velY, color, size, exists) {
+  Shape.call(this, x, y, velX, velY, exists);
   this.color = color;
   this.size = size;
 }
@@ -86,7 +93,8 @@ while(balls.length < 25) {
     random(-7,7),
     random(-7,7),
     'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
-    size
+    size,
+    true
   );
   balls.push(ball);
 }
