@@ -39,7 +39,7 @@ function EvilCircle(x, y, exists){
     this.size = 10;
 }
 
-// define EvilCircle method
+// define EvilCircle draw method
 
 EvilCircle.prototype.draw = function() {
   ctx.beginPath();
@@ -49,9 +49,9 @@ EvilCircle.prototype.draw = function() {
   ctx.lineWidth = 3;
 };
 
-// define EvilCircle boundary method
+// define EvilCircle checkBounds method
 
-Ball.prototype.update = function() {
+EvilCircle.prototype.checkBounds = function() {
   if((this.x + this.size) >= width) {
     this.velX = -(this.size);
   }
@@ -66,6 +66,39 @@ Ball.prototype.update = function() {
 
   if((this.y - this.size) <= 0) {
     this.velY = -(this.size);
+  }
+};
+
+// define EvilCircle setControls method
+
+EvilCircle.prototype.setControls = function() {
+  var _this = this;
+  window.onkeydown = function(e) {
+      if (e.keyCode === 65) {
+        _this.x -= _this.velX;
+      } else if (e.keyCode === 68) {
+        _this.x += _this.velX;
+      } else if (e.keyCode === 87) {
+        _this.y -= _this.velY;
+      } else if (e.keyCode === 83) {
+        _this.y += _this.velY;
+      }
+   }
+};
+
+// define EvilCircle collision detection method
+
+EvilCircle.prototype.collisionDetect = function() {
+  for(var j = 0; j < balls.length; j++) {
+    if(balls[j].exists) {
+      var dx = this.x - balls[j].x;
+      var dy = this.y - balls[j].y;
+      var distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < this.size + balls[j].size) {
+        balls[j].exists = false;
+      }
+    }
   }
 };
 
