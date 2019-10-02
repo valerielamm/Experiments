@@ -112,22 +112,9 @@ function renderView() {
 
         container.className = "node";
         dataElement.innerHTML = value;
-
-        dataElement.style.background = getColor(value, counter)
+        
         container.appendChild(dataElement);
         dataElement.className = value;
         return container
-    }
-
-    function getColor(value, counter) {
-        value = 255 - Number(value) % 255;
-        switch (value % 3) {
-            case 0:
-                return 'rgb(' + value + ',' + value + ',0)';
-            case 1:
-                return 'rgb(' + value + ',0,' + value + ')';
-            default:
-                return 'rgb(0,' + value + ',' + value + ')';
-        }
     }
 }
