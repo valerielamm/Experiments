@@ -82,11 +82,18 @@ function flexboxChange(styleChange){
             break;
     }
 }
-var divCount = 3;
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
+var divCount = 3; // Number count on div
 function moreDivs(){
     var div = document.createElement("div");
     div.innerHTML = divCount+1;
     div.className = "box";
+    // Makes new boxes different shades of grey
+    div.style.background = "rgba(255, 255, 255, ." + getRandomInt(5) + ")"; 
     container.appendChild(div);
     divCount++;
 }
