@@ -8,54 +8,59 @@
 </head>
 
 <body>
+    <div id="container">
+        <div class="box">1 ( flex-grow: 2 )</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+    </div>
     <div id="wrapper">
-        <div id="container">
-            <div class="box">1 ( flex-grow: 2 )</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-        </div>
         <h2>display</h2>
         <div class="buttonContainer">
-            <button id="flex">flex</button>
-            <button id="inlineFlex">inline-flex</button>
+            <button id="flex" onclick="flexboxChange(flex)">flex</button>
+            <button id="inlineFlex" onclick="flexboxChange(inlineFlex)">inline-flex</button>
         </div>
         <h2>flex-direction</h2>
         <div class="buttonContainer">
-            <button id="row">row</button>
-            <button id="rowReverse">row-reverse</button>
-            <button id="column">column</button>
-            <button id="columnReverse">column-reverse</button>
+            <button id="row" onclick="flexboxChange(row)">row</button>
+            <button id="rowReverse" onclick="flexboxChange(rowReverse)">row-reverse</button>
+            <button id="column" onclick="flexboxChange(column)">column</button>
+            <button id="columnReverse" onclick="flexboxChange(columnReverse)">column-reverse</button>
         </div>
         <h2>flex-wrap</h2>
         <div class="buttonContainer">
-            <button id="nowrap">nowrap</button>
-            <button id="wrap">wrap</button>
-            <button id="wrapReverse">wrap-reverse</button>
+            <button id="nowrap" onclick="flexboxChange(nowrap)">nowrap</button>
+            <button id="wrap" onclick="flexboxChange(wrap)">wrap</button>
+            <button id="wrapReverse" onclick="flexboxChange(wrapReverse)">wrap-reverse</button>
         </div>
         <h2>justify-content</h2>
         <div class="buttonContainer">
-            <button id="justifyFlexStart">flex-start</button>
-            <button id="justifyFlexEnd">flex-end</button>
-            <button id="justifyCenter">center</button>
-            <button id="justifySpaceBetween">space-between</button>
-            <button id="justifySpaceAround">space-around</button>
+            <button id="justifyFlexStart" onclick="flexboxChange(justifyFlexStart)">flex-start</button>
+            <button id="justifyFlexEnd" onclick="flexboxChange(justifyFlexEnd)">flex-end</button>
+            <button id="justifyCenter" onclick="flexboxChange(justifyCenter)">center</button>
+            <button id="justifySpaceBetween" onclick="flexboxChange(justifySpaceBetween)">space-between</button>
+            <button id="justifySpaceAround" onclick="flexboxChange(justifySpaceAround)">space-around</button>
         </div>
         <h2>align-items</h2>
         <div class="buttonContainer">
-            <button id="itemsFlexStart">flex-start</button>
-            <button id="itemsFlexEnd">flex-end</button>
-            <button id="itemsCenter">center</button>
-            <button id="itemsBaseline">baseline</button>
-            <button id="itemsStretch">stretch</button>
+            <button id="itemsFlexStart" onclick="flexboxChange(itemsFlexStart)">flex-start</button>
+            <button id="itemsFlexEnd" onclick="flexboxChange(itemsFlexEnd)">flex-end</button>
+            <button id="itemsCenter" onclick="flexboxChange(itemsCenter)">center</button>
+            <button id="itemsBaseline" onclick="flexboxChange(itemsBaseline)">baseline</button>
+            <button id="itemsStretch" onclick="flexboxChange(itemsStretch)">stretch</button>
         </div>
         <h2>align-content</h2>
         <div class="buttonContainer">
-            <button id="contentFlexStart">flex-start</button>
-            <button id="contentFlexEnd">flex-end</button>
-            <button id="contentCenter">center</button>
-            <button id="contentSpaceBetween">space-between</button>
-            <button id="contentSpaceAround">space-around</button>
-            <button id="contentStretch">stretch</button>
+            <button id="contentFlexStart" onclick="flexboxChange(contentFlexStart)">flex-start</button>
+            <button id="contentFlexEnd" onclick="flexboxChange(contentFlexEnd)">flex-end</button>
+            <button id="contentCenter" onclick="flexboxChange(contentCenter)">center</button>
+            <button id="contentSpaceBetween" onclick="flexboxChange(contentSpaceBetween)">space-between</button>
+            <button id="contentSpaceAround" onclick="flexboxChange(contentSpaceAround)">space-around</button>
+            <button id="contentStretch" onclick="flexboxChange(contentStretch)">stretch</button>
+        </div>
+        <h2>more</h2>
+        <div class="buttonContainer">
+            <button id="addDiv" onclick="moreDivs()">+1 div</button>
+            <button id="removeDiv" onclick="lessDivs()">-1 div</button>
         </div>
     </div>
 </body>
