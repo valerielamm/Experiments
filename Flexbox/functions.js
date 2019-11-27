@@ -1,6 +1,11 @@
 var container = document.getElementById("container");
 
-// Button toggle groups
+/*
+    Button groups for the #container div.
+    They are grouped together under the property they belong to.
+    This is used to quickly remove the 'selected' class from 
+    all related buttons when there is a change to their property.
+*/
 var displays = document.querySelectorAll('#flex, #inlineFlex');
 var flexDirections = document.querySelectorAll('#row, #rowReverse, #column, #columnReverse');
 var flexWraps = document.querySelectorAll('#nowrap, #wrap, #wrapReverse');
@@ -8,16 +13,17 @@ var justifyContents = document.querySelectorAll('#justifyFlexStart, #justifyFlex
 var alignItems = document.querySelectorAll('#itemsFlexStart, #itemsFlexEnd, #itemsCenter, #itemsBaseline, #itemsStretch');
 var alignContents = document.querySelectorAll('#contentFlexStart, #contentFlexEnd, #contentCenter, #contentSpaceBetween, #contentSpaceAround, #contentStretch');
 
-// Turn all buttons off and then the selected one on in it's group
-function greyButtons(groupName, selected){
-    for (var i = 0; i < groupName.length; i++){
+// Turn all buttons 'off' and then the selected one 'on' (in it's property group)
+function greyButtons(groupName, selected) {
+    for (var i = 0; i < groupName.length; i++) {
         groupName[i].classList.remove("selected");
     };
     document.getElementById(selected).classList.add("selected");
 }
 
-function flexboxChange(styleChange){
-    switch(styleChange){
+// Called when a property change button is pressed
+function flexboxChange(styleChange) {
+    switch (styleChange) {
         case flex:
             container.style.display = "flex";
             greyButtons(displays, "flex");
@@ -124,23 +130,27 @@ function flexboxChange(styleChange){
     }
 }
 
+// Used to randomize shades of grey on new divs
 function getRandomInt(max) {
-  return Math.floor(Math.random() * Math.floor(max));
+    return Math.floor(Math.random() * Math.floor(max));
 }
 
-var divCount = 3; // Number count on div
-function moreDivs(){
+// Number count on divs
+var divCount = 3;
+
+// Add another 'box' div to #container
+function moreDivs() {
     var div = document.createElement("div");
-    div.innerHTML = divCount+1;
+    div.innerHTML = divCount + 1;
     div.className = "box";
-    // Makes new boxes different shades of grey
-    div.style.background = "rgba(255, 255, 255, ." + getRandomInt(5) + ")"; 
+    div.style.background = "rgba(255, 255, 255, ." + getRandomInt(5) + ")";
     container.appendChild(div);
     divCount++;
 }
 
-function lessDivs(){
-    if (divCount > 1){
+// Remove the last 'box' div from #container
+function lessDivs() {
+    if (divCount > 1) {
         let item = container.lastElementChild;
         container.removeChild(item);
         divCount--;
