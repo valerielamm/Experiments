@@ -1,0 +1,45 @@
+/* Required Stylesheets */
+.wheel-button {
+  position: fixed;
+  top:50%;
+  margin-top: -50px;
+}
+.wheel {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 25em; /* this will determine the diameter of the circle  */
+  height: 6em; /* this will determine the diameter of the circle  */
+  visibility: hidden;
+  position: fixed;
+  display: block; 
+}
+
+.smile:hover { 
+opacity:0;
+}
+
+.wheelx {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  visibility: hidden;
+  position: fixed;
+  display: block; 
+    pointer-events: none;
+}
+
+.wheel-x {
+  position: fixed;
+  top:50%;
+  margin-top: -50px;
+    pointer-events: none;
+
+.wheel li {
+  overflow: hidden;
+  float:left;
+}
+
+.wheel li a {
+  display: block;
+}

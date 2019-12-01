@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    
+    <!--full page start    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Looping - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage looping demo." />
+	<meta name="keywords"  content="fullpage,jquery,looping,loop,loopTop,loopBottom,demo" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+	
+	<script type="text/javascript" src="vendors/scrolloverflow.js"></script>
+
+        <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#d1d1d1', '#c6c6c6', '#b7b7b7', '#c6c6c6', '#d1d1d1', '#c6c6c6', '#b7b7b7'],
+				anchors: ['firstPage', 'secondPage', '3rdPage', '4thPage', '5thPage', '6thPage', '7thPage'],
+				menu: '#menu',
+				loopTop: true,
+				loopBottom: true
+			});
+		});
+	</script>
+    
+    <!--full page end-->
+    
+    <!--for animated smiles-->
+        
+    <!--for animated smiles-->
+
+    
+    <!-- circle Menu Head Start -->
+    <script type="text/javascript" src="jquery.wheelmenu.js"></script>
+
+    
+    <style>
+    html {
+      height: 100%;
+    }
+    body {
+      background: #f4eedf;
+      padding: 0;
+      text-align: center;
+      font-family: 'open sans';
+      position: relative;
+      margin: 0;
+      height: 100%;
+    }
+
+    .wrapper {
+        height: auto !important;
+        height: 100%;
+        margin: 0 auto; 
+        overflow: hidden;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+
+
+    .wheel-button {
+
+      line-height: 3em;
+      font-weight: bold;
+      font-size: 3em;
+      background: #ed1c24; 
+      text-align: center;
+      border-radius: 50%;
+      width: 3em;
+      height: 3em;
+      display:block;
+      z-index: 4;
+      left: -.5em;
+
+    }
+    .wheel-button:hover{
+      background:0;
+      opacity: 0;
+      z-index: 2;
+      left: -.5em;
+    }
+
+    .wheel-x, .wheel-x:visited {
+
+      line-height: 3em;
+      font-weight: bold;
+      font-size: 3em;
+      background: #ed1c24; 
+      text-align: center;
+      border-radius: 50%;
+      width: 3em;
+      height: 3em;
+      display: block;
+     z-index: 3;             
+      left: -.5em;
+    }
+
+    .wheel li a, .wheel li a:visited{
+      line-height: 4em;
+      background: rgba(0,0,0,0.65);
+      font-weight: bold;
+      text-align: center;
+      padding: 1em;
+      border-radius: 50%;
+      width: 4em;
+      height: 4em;
+      color: white;
+      display: block;
+    }
+
+    .wheel li a:hover{
+      background: #ed1c24;
+    }
+
+    </style>
+	<link rel="stylesheet" type="text/css" href="wheelmenu.css" />
+	<script>
+	  $(document).ready(function(){
+			$(".wheel-button").wheelmenu({
+        trigger: "click",
+        animationSpeed: "slow"
+      });
+		});
+		
+	</script>
+    
+    <!-- circle Menu End -->  
+
+    
+</head>
+<body>
+
+
+<!--
+Put these data menu anchors behind the div class relevant to what page it's on
+    Put these a href around the img
+-->
+<!--
+    <ul id="menu">
+        <li data-menuanchor="firstPage" class="active"><a href="#firstPage">First slide</a></li>
+        <li data-menuanchor="secondPage"><a href="#secondPage">Second slide</a></li>
+        <li data-menuanchor="3rdPage"><a href="#3rdPage">Third slide</a></li>
+        <li data-menuanchor="4thPage"><a href="#4thPage">Fourth slide</a></li>
+        <li data-menuanchor="5thPage"><a href="#5thPage">Fith slide</a></li>
+        <li data-menuanchor="6thPage"><a href="#6thPage">Sixth slide</a></li>
+        <li data-menuanchor="7thPage"><a href="#7thPage">Seventh slide</a></li>
+    </ul>
+-->
+
+    <div id="fullpage">
+        <div class="section" id="section0">
+             <div class="wrapper">     
+                <div class="collage_box">
+                    <div class="collage c1" data-menuanchor="4thPage">
+                        <a href="#4thPage"><img src="images/1jan.svg"></a>
+                    </div>
+                    <div class="collage c2" data-menuanchor="5thPage">
+                        <a href="#5thPage"><img src="images/2feb.svg"></a>
+                    </div>
+                    <div class="collage c8" data-menuanchor="7thPage">
+                        <a href="#7thPage"><img src="images/8aug.svg"></a>
+                    </div>
+
+                    <div class="collage c3" data-menuanchor="6thPage">
+                        <a href="#6thPage"><img src="images/3mar.svg"></a>
+                    </div>
+                    <div class="collage c4">
+                        <img src="images/4apr.svg">
+                    </div>
+
+                    <div class="collage c10">
+                        <img src="images/10oct.svg">
+                    </div>
+
+                    <div class="collage c11" data-menuanchor="secondPage">
+                        <a href="#secondPage"><img src="images/11nov.svg"></a>
+                    </div>
+                    <div class ="collage logo">
+                       <img src="images/logo.svg"> 
+                    </div>
+
+                    <div class="collage c7">
+                        <img src="images/7jul.svg">
+                    </div>
+                    <div class="collage c5">
+                        <img src="images/5may.svg">
+                    </div>
+                    <div class="collage c6">
+                        <img src="images/6jun.svg">
+                    </div>
+                    <div class="collage c9">
+                        <img src="images/9sep.svg">
+                    </div>
+
+                    <div class="collage c12" data-menuanchor="3rdPage">
+                        <a href="#3rdPage"><img src="images/12dec.svg"></a>
+                    </div>
+                </div>        
+            </div>  
+        </div>
+        <div class="section" id="section1">
+            <div class="intro"> 
+                <div class="wrapper">
+                    <div class="event_box">
+                        <div class="year11 year">
+                            2<br>
+                            0<br>
+                            1<br>
+                            6
+                        </div>
+                        <div class="month">
+                            <img src="images/11nov.svg" id="11nov">
+                        </div>
+                        <div class="day">
+                            &thinsp;3rd
+                        </div>
+                        <div class="title">
+                            Coding and Pizza
+                        </div>
+
+                        <div class="description">
+                            Grab a slice and take a seat. We invite you to join us in learning a new website coding trick. We will be covering how to make and use a new effect, where your mouse becomes a light in the dark as you hover over a webpage. Please RSVP via Facebook. <br>You are allowed to bring store-bought foods to share with your peers.
+                        </div>
+                           
+                        <div class="social_media_box">
+                             <div class="mediabox"> 
+                                 <div class="circle tumblr">
+                                      <img src="images/tumblr.svg">
+                                 </div>
+                                 <div class="circle facebook">             
+                                     <img src="images/facebook.svg">
+                                 </div>
+                                 <div class="circle mail">
+                                     <img src="images/mail.svg">
+                                 </div>
+                             </div>
+                        </div>
+                        <div class="time">
+                             <div class="timebox"> 
+                                 <div class="timetext"> 9am - 12pm </div>
+                             </div>
+                        </div>
+
+                        <div class="location">
+                             <div class="locationbox"> 
+                                 <div class="locationtext">JCM 2121 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="intro">
+                <div class="wrapper">
+                     <div class="event_box">
+                        <div class="year12 year">
+                            2<br>
+                            0<br>
+                            1<br>
+                            6
+                        </div>
+        
+                        <div class="month">
+                            <img src="images/12dec.svg" id="12dec">
+                        </div>
+                        <div class="day">
+                            &thinsp;12th
+                        </div>
+                        <div class="title">
+                            Ornaments and Elves
+                        </div>
+
+                        <div class="description">
+                           Bring an ornament to decorate and a paintbrush. We will have some acrylic paints you can use, feel free to bring your own paints.  The fun committee will be projecting the movie, Elf, onto the wall, as we all paint ornaments on the floor. Feel free to bring snackage to pass around.
+                        </div>
+
+                        <div class="social_media_box">
+                             <div class="mediabox"> 
+                                 <div class="circle tumblr">
+                                      <img src="images/tumblr.svg">
+                                 </div>
+                                 <div class="circle facebook">             
+                                     <img src="images/facebook.svg">
+                                 </div>
+                                 <div class="circle mail">
+                                     <img src="images/mail.svg">
+                                 </div>
+                             </div>
+                        </div>
+
+                        <div class="time">
+                             <div class="timebox"> 
+                                 <div class="timetext"> 9am - 12pm </div>
+                             </div>
+                        </div>
+
+                         <div class="location">
+                             <div class="locationbox"> 
+                                 <div class="locationtext">JCM 2121 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="intro">
+                <div class="wrapper">
+                    <div class="event_box">
+                        <div class="year1 year">
+                            2<br>
+                            0<br>
+                            1<br>
+                            7
+                        </div>
+
+                        <div class="month">
+                            <img src="images/1jan.svg" id="1jan">
+                        </div>
+                        <div class="day">
+                            &thinsp;7th
+                        </div>
+                        <div class="title">
+                            Campfire and Competitions 
+                        </div>
+
+                        <div class="description">
+                            Meet up with the fun committee at the campsite. Bring a jacket because it can get chilly. Bring a chair, blanket, or try to squeeze a seat on the limited spacing on the logs. We will have a carving competition to make an aesthetically pleasing 3d letter. Who ever wins gets a free Fun Committee shirt. We will also have some for sale for $15, for the losers. We will have marshmallows, buns, (limited) carving tools, and weenies provided. Rsvp via facebook to assure you get a carving tool and weenie (don’t be a weenie thief, you weenies).
+                        </div>
+
+                        <div class="social_media_box">
+                             <div class="mediabox"> 
+                                 <div class="circle tumblr">
+                                      <img src="images/tumblr.svg">
+                                 </div>
+                                 <div class="circle facebook">             
+                                     <img src="images/facebook.svg">
+                                 </div>
+                                 <div class="circle mail">
+                                     <img src="images/mail.svg">
+                                 </div>
+                             </div>
+                        </div>
+
+                         <div class="time">
+                             <div class="timebox"> 
+                                 <div class="timetext"> 9am - 12pm </div>
+                             </div>
+                        </div>
+
+                        <div class="location">
+                            <div class="locationbox"> 
+                                <div class="locationtext">JCM 2121 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section" id="section4">
+        <div class="intro">
+            <div class="wrapper">
+                <div class="event_box">
+        
+                    <div class="year2 year">
+                        2<br>
+                        0<br>
+                        1<br>
+                        7
+                    </div>
+
+                    <div class="month">
+                        <img src="images/2feb.svg" id="2feb">
+                    </div>
+                    <div class="day">
+                        &thinsp;23rd
+                    </div>
+                    <div class="title">
+                        Guest Speaker Jane
+                    </div>
+
+                    <div class="description">
+                       Jane is showing up to talk about her career as a web designer. Join us in JCM 2021 to learn her tips, tricks, and experience. For those interested in the field, this is a great opportunity to see a living breathing worker, who will be more than willing to answer any questions and concerns you might have.
+                    </div>
+
+                    <div class="social_media_box">
+                         <div class="mediabox"> 
+                             <div class="circle tumblr">
+                                  <img src="images/tumblr.svg">
+                             </div>
+                             <div class="circle facebook">             
+                                 <img src="images/facebook.svg">
+                             </div>
+                             <div class="circle mail">
+                                 <img src="images/mail.svg">
+                             </div>
+                         </div>
+                    </div>
+
+                    <div class="time">
+                         <div class="timebox"> 
+                             <div class="timetext"> 9am - 12pm </div>
+                         </div>
+                    </div>
+
+                    <div class="location">
+                        <div class="locationbox"> 
+                            <div class="locationtext">JCM 2121 </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+        <div class="section" id="section5">
+            <div class="intro">
+                <div class="wrapper">
+                    <div class="event_box">
+                        <div class="year3 year">
+                            2<br>
+                            0<br>
+                            1<br>
+                            7
+                        </div>
+
+                        <div class="month">
+                            <img src="images/3mar.svg" id="3mar">
+                        </div>
+                        <div class="day">
+                            &thinsp;15th
+                        </div>
+                        <div class="title">
+                            Guest Speaker Jerry
+                        </div>
+
+                        <div class="description">
+                            Jerry is showing up to talk about his processes in designing books. Starting in Georgia, he made his own buisiness with his fellow teammates. Learn about his back story and his most recent designs.
+                            Please RSVP via Facebook.
+
+                        </div>
+
+                        <div class="social_media_box">
+                             <div class="mediabox"> 
+                                 <div class="circle tumblr">
+                                      <img src="images/tumblr.svg">
+                                 </div>
+                                 <div class="circle facebook">             
+                                     <img src="images/facebook.svg">
+                                 </div>
+                                 <div class="circle mail">
+                                     <img src="images/mail.svg">
+                                 </div>
+                             </div>
+                        </div>
+
+                         <div class="time">
+                             <div class="timebox"> 
+                                 <div class="timetext"> 9am - 12pm </div>
+                             </div>
+                        </div>
+
+                        <div class="location">
+                             <div class="locationbox"> 
+                                 <div class="locationtext">JCM 2121 </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div class="section" id="section6">
+        <div class="intro">
+            <div class="wrapper">
+                
+            <div class="event_box">
+        
+                <div class="year8 year">
+                    2<br>
+                    0<br>
+                    1<br>
+                    7
+                </div>
+
+                <div class="month">
+                    <div class="aug">
+                    <img src="images/8aug.svg" id="8aug">
+                    </img>
+                    </div>
+                </div>
+                <div class="day">
+                    &thinsp;19th
+                </div>
+                <div class="title">
+                    Sailing Letters
+                </div>
+
+                <div class="description">
+                   Bring some drawing materials and a towel to sit on. Design your very own sailboat. We will provide a biodegradable paper to use for folding you origami boat. The theme is typography so each participant is urged to do a type related design for the picture. Any other boats designed other ways will set sail after the picture is taken. We will meet up and then take off to the river on a bus. Reserve via facebook so we have an idea of how much paper to get. Each person can make 2 boats. Any more after that will be $1 for a piece for the paper.
+                </div>
+
+                <div class="social_media_box">
+                     <div class="mediabox"> 
+                         <div class="circle tumblr">
+                              <img src="images/tumblr.svg">
+                         </div>
+                         <div class="circle facebook">             
+                             <img src="images/facebook.svg">
+                         </div>
+                         <div class="circle mail">
+                             <img src="images/mail.svg">
+                         </div>
+                     </div>
+                </div>
+
+                 <div class="time">
+                     <div class="timebox"> 
+                         <div class="timetext"> 9am - 12pm </div>
+                     </div>
+                </div>
+
+                <div class="location">
+                     <div class="locationbox"> 
+                         <div class="locationtext">JCM 2121 </div>
+                     </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!--- Menu Body STart-->
+      <div class="wrapper">
+          <div class="main">
+
+            <a href ="#wheelx" class="wheel-x">
+              <span>
+                    <img src="images/x_face.svg" style="width:2.7em;height:2.7em;margin-top:.15em;margin-left:.1em;">
+              </span>
+            </a>
+
+            <a href="#wheel" class="wheel-button">
+                <span class="smile">
+                    <img src="images/fun_face.svg" id="fun"; style="width:2.7em;height:2.7em;margin-top:.15em;margin-left:.1em;">
+                </span>
+            </a>
+
+            <ul id="wheel"  data-angle="E">
+                <li class="item"><a href="#home">Stay Updated</a></li>
+                <li class="item"><a href="#home">Contact Us</a></li>
+                <li class="item"><a href="#home"><img src="images/fun_logo.svg" id="fun";></a></li>
+                <li class="item"><a href="#home">Local Events</a></li>
+                <li class="item"><a href="#home">Suggestions</a></li>
+                <li class="item"><a href="#home">Archive</a></li>
+            </ul>
+           </div>
+        </div>
+    <!--- Menu End -->
+    
+    
+    <!--    For animated Smiles-->
+
+    <div class="main">
+             <img height="35em" width="35em" alt="LOGIN" src="images/u_move.svg" onmouseover="switchImageIdOver(this,'images/u_move.gif');" onmouseout="switchImageIdOut(this,'images/u_move.svg');"
+                  style="margin-top:-20em;"
+              />
+    </div>
+    <div class="main">
+             <img height="35em" width="35em" alt="LOGIN" src="images/u_move.svg" onmouseover="switchImageIdOver(this,'images/u_move.gif');" onmouseout="switchImageIdOut(this,'images/u_move.svg');"
+                  style="margin-top:-35em; margin-left:20em;"
+              />
+    </div>
+    <div class="main">
+             <img height="35em" width="35em" alt="LOGIN" src="images/u_move.svg" onmouseover="switchImageIdOver(this,'images/u_move.gif');" onmouseout="switchImageIdOut(this,'images/u_move.svg');"
+                  style="margin-top:-25em; margin-left:40em;"
+              />
+    </div>
+<script> function switchImageIdOver(elem, imgPath) {
+elem.src = imgPath;
+}
+function switchImageIdOut(elem, imgPath) {
+elem.src = imgPath;
+} 
+</script>
+    
+<!--    For animated Smiles-->
+    
+</body>
+</html>
