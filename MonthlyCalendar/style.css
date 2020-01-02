@@ -1,0 +1,106 @@
+/* Reset CSS
+ * --------------------------------------- */
+body,
+div,
+li,
+h1,
+h1,
+h3,
+h4,
+p {
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    border: 0;
+}
+
+h1,
+h1,
+h3,
+h4 {
+    font-weight: normal;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+    color: #444;
+}
+
+
+/* Custom CSS
+ * --------------------------------------- */
+
+body {
+    background: #d6d6d6;
+}
+
+.calendar-square {
+    width: 80%;
+    margin: 3em 0 2em 10%;
+    background: #ebebeb;
+    padding: 10px;
+}
+
+h1 {
+    font-family: 'Holtwood One SC', serif;
+    width: 100%;
+    margin: .5em 0 2em 0;
+    font-size: 2em;
+    color: rgb(26, 26, 26);
+    opacity: .9;
+    letter-spacing: 2;
+    text-align: center;
+}
+
+.day-row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    align-content: flex-start;
+    padding: 0;
+    margin: 0;
+}
+
+.day, .weekday {
+    flex: auto;
+    display: block;
+    position: relative;
+    min-height: 10em;
+    margin: 1px;
+    background: #E2E2E2;
+    width: 7.1428%;
+}
+
+.weekday{
+    min-height: 0;
+    background: none;
+    font-family: 'Patrick Hand', cursive;
+    opacity: .9;
+    margin-left: 1%;
+    width: 6.1428%;
+}
+
+.day p{
+    font-size: 14px;
+    font-family: 'Noto Sans', sans-serif;
+    margin: 2em 2em 3em 1em;
+}
+
+h2 {
+    position: absolute;
+    top: 0;
+    right: .5em;
+    padding: 0;
+    margin: 0;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 1em;
+    opacity: .7;
+}
