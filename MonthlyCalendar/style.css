@@ -41,9 +41,16 @@ body {
 
 .calendar-square {
     width: 80%;
-    margin: 3em 0 2em 10%;
-    background: #ebebeb;
+    background: rgba(235,235,235, .9);
+    margin-left: 10%;
     padding: 10px;
+}
+
+.calendar-bg{
+    width: 100%;
+    background-attachment: fixed;
+    padding: 4em 0 8em 0;
+    background-size: cover;
 }
 
 h1 {
