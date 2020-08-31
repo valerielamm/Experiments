@@ -1,2 +1,30 @@
 
 Bunny Tkinter App/The Golden Carrot.app/Contents/Resources/drawing.png
+
+
+# JPEG
+*.jpg
+*.jpeg
+
+# Graphics Interchange Format
+*.gif
+
+# Portable Network Graphics
+*.png
+
+# Scalable Vector Graphics
+*.svg
+*.svgz
+
+# Portable Document Format
+*.pdf
+
+# ICO
+*.ico
+
+Videos
+*.mp4
+*.mov
+
+Music
+*.mp3
