@@ -397,7 +397,7 @@ br {
 
     /*Open Menu*/
 
-    #hamburger:checked ~ ul {
+    #hamburger:checked~ul {
         display: flex;
         flex-direction: column;
     }
@@ -455,10 +455,31 @@ br {
 
 /* Home Page _____________ */
 
+.arrow {
+    text-align: center;
+    text-decoration: none;
+    color: #1A1A1A;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+    width: fit-content;
+    position: absolute;
+    bottom: 1em;scroll-behavior: smooth;
+}
+
 #splashVid {
     height: 100vh;
     display: block;
     overflow: hidden;
+    width: 100%;
+    text-align: center;
+    text-align: -webkit-center;
+    position: relative;
 }
 
 #vidDiv {
@@ -742,7 +763,7 @@ br {
 
 #productTotalPrice {
     text-align: right;
-    
+
 }
 
 #addToCart {
@@ -752,14 +773,15 @@ br {
 
 /* [ON SMALL SCREENS] */
 @media screen and (max-width: 768px) {
-    #productPageTop{
+    #productPageTop {
         flex-direction: column;
     }
-    
-    #productDetails, #productSlideshow{
+
+    #productDetails,
+    #productSlideshow {
         width: 80%;
         margin: 2em 10%;
-    }   
+    }
 }
 
 /*About and Reviews*/
