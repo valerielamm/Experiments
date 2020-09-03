@@ -145,16 +145,17 @@ body {
 }
 
 footer {
+    position: relative;
     width: 100%;
     max-width: 1080px;
     /* 90% of 1200 inline with br */
-    padding: 1em 0 1.5em 0;
+    padding: 1em 0 3.5em 0;
     font-size: .8em;
     font-weight: normal;
     display: flex;
     justify-content: space-between;
     width: 80%;
-    margin: 0 auto;
+    margin: 0 auto 0 auto;
     color: #A8A7A3;
     flex-direction: row-reverse;
 }
@@ -183,6 +184,25 @@ footer ul li a:visited {
 
 footer ul li a:hover {
     color: #ffffff;
+}
+
+small {
+    color:#1A1A1A;
+    position: relative;
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #A8A7A3;
+    padding: 2em 0;
+    color: #1A1A1A;
+}
+ small a {
+     text-decoration: underline;
+     color: #1a1a1a;
+ }
+
+ small a:hover{
+    color: white;
 }
 
 button {
