@@ -169,6 +169,7 @@ footer h3 {
     margin-bottom: .75em;
 }
 
+
 footer ul li {
     margin-bottom: .75em;
 }
@@ -187,10 +188,13 @@ footer ul li a:hover {
 button {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
-    padding: 1em;
     border-style: none;
     border-color: transparent;
     outline: none;
+    font-size: 1em;
+    padding: .8em 1em;
+    font-weight: 500;
+    margin-bottom: 1em;
 }
 
 button:active {
@@ -199,6 +203,7 @@ button:active {
 
 button:hover {
     background: rgba(0, 0, 0, 0.4);
+    cursor: pointer;
 }
 
 br {
@@ -218,6 +223,22 @@ br {
 }
 
 /* Common ______________________________________________________ */
+
+.no-select {
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Old versions of Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
 
 /* General _________________*/
 
@@ -457,7 +478,10 @@ br {
 
 .arrow {
     text-align: center;
+    font-size: 2em;
+    font-weight: 600;
     text-decoration: none;
+    transform: rotate(-45deg);
     color: #1A1A1A;
     -webkit-user-select: none;
     /* Safari */
@@ -469,7 +493,13 @@ br {
     /* Standard */
     width: fit-content;
     position: absolute;
-    bottom: 1em;scroll-behavior: smooth;
+    bottom: 1em;
+    scroll-behavior: smooth;
+}
+
+.arrow:hover {
+    cursor: pointer;
+    color: white;
 }
 
 #splashVid {
@@ -513,7 +543,7 @@ br {
     padding: 1em 0 1.5em 0;
     background: rgba(26, 26, 26, .9);
     text-align: center;
-    margin-top: 50vh;
+    margin-top: 30vh;
 }
 
 #banner h1 {
@@ -547,19 +577,20 @@ br {
 
 #allAttributes {
     display: flex;
-    padding-top: 2em;
+    padding-top: 3em;
     justify-content: center;
 }
 
 .attribute-icon {
-    height: 50px;
+    height: 40px;
+    margin-bottom: 15px;
 }
 
 .attribute h2 {
     font-family: 'Kalam';
     font-weight: bold;
     padding: 0 .5em;
-    margin-bottom: 2em;
+    margin-bottom: 4em;
     font-size: .9em;
     max-width: 100px;
     color: rgba(0, 0, 0, .6);
