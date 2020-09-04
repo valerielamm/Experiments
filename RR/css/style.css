@@ -640,10 +640,13 @@ br {
 
 .product-container .product-card img {
     width: 100%;
-    margin-bottom: 1em;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 0 6px rgba(0, 0, 0, .4);
+}
+
+.product-card-img-a{
+    margin-bottom: 1em;
 }
 
 .product-container .product-card h2 {
@@ -659,6 +662,7 @@ br {
 .product-container .product-card a {
     text-decoration: none;
     color: #1a1a1a;
+    display: inline-block;
 }
 
 .product-container .product-card p {
@@ -681,6 +685,7 @@ br {
   
   .product-card:hover .overlay {
     opacity: 1;
+    pointer-events: none;
   }
 
   .product-card h2:hover {
