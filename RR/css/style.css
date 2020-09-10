@@ -917,6 +917,42 @@ br {
     margin-top: 2em;
 }
 
+#reviewGallery li a img, #reviewGallery li a, #reviewGallery li {
+    width:100%;
+    display: block;
+}
+
+#reviewGallery {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#reviewGallery li {
+    flex-basis: 30%;
+    height: 0;
+    padding-bottom: 30%;
+    overflow: hidden;
+    margin-bottom: 2.5%;
+    background: #d6d6d6;
+}
+
+#reviewGallery li a{
+    text-align: center;
+}
+#reviewGallery li:first-child{
+    border-top-left-radius: 20px;
+}
+#reviewGallery li:last-child{
+    border-bottom-right-radius: 20px;
+}
+#reviewGallery li:nth-child(3){
+    border-top-right-radius: 20px;
+}
+#reviewGallery li:nth-child(4){
+    border-bottom-left-radius: 20px;
+}
+
+
 /* [ON SMALL SCREENS] */
 @media screen and (max-width: 768px) {
     #aboutReview {
