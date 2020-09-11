@@ -206,7 +206,7 @@ small a:hover {
     color: white;
 }
 
-button {
+button, #addToCart {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     border-style: none;
@@ -218,11 +218,11 @@ button {
     margin-bottom: 1em;
 }
 
-button:active {
+button:active, #addToCart:active {
     border-style: none;
 }
 
-button:hover {
+button:hover, #addToCart:hover {
     background: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
@@ -856,6 +856,9 @@ br {
     height: 30px;
     border-radius: 50%;
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
 
 .plus-minus:hover {
@@ -889,17 +892,16 @@ br {
 
 #aboutReview {
     background: #a8a7a2;
-    width: 70%;
-    padding: 1em 22.5% 0 7.5%;
+    width: 85%;
+    padding: 1em 7.5% 0 7.5%;
 }
 
 #aboutReview ul li {
     text-transform: uppercase;
     display: inline;
-    margin-right: 1em;
 }
 
-#aboutReview ul li:hover{
+#aboutReview ul li:hover {
     cursor: pointer;
     color: #ebebeb;
 }
@@ -909,16 +911,18 @@ br {
     line-height: 150%;
 }
 
-#aboutReview .underline{
+#aboutReview .underline {
     font-weight: 600;
 }
 
-#reviews{
+#reviews {
     margin-top: 2em;
 }
 
-#reviewGallery li a img, #reviewGallery li a, #reviewGallery li {
-    width:100%;
+#reviewGallery li a img,
+#reviewGallery li a,
+#reviewGallery li {
+    width: 100%;
     display: block;
 }
 
@@ -926,37 +930,148 @@ br {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
+
 #reviewGallery li {
-    flex-basis: 30%;
+    flex-basis: 16%;
     height: 0;
-    padding-bottom: 30%;
+    padding-bottom: 16%;
     overflow: hidden;
     margin-bottom: 2.5%;
     background: #d6d6d6;
 }
 
-#reviewGallery li a{
+#reviewGallery li a {
     text-align: center;
 }
-#reviewGallery li:first-child{
+
+#reviewGallery li a:hover {
+    opacity: .95;
+}
+
+#reviewGallery li:first-child {
     border-top-left-radius: 20px;
-}
-#reviewGallery li:last-child{
-    border-bottom-right-radius: 20px;
-}
-#reviewGallery li:nth-child(3){
-    border-top-right-radius: 20px;
-}
-#reviewGallery li:nth-child(4){
     border-bottom-left-radius: 20px;
 }
 
+#reviewGallery li:last-child {
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#reviewGallery li:last-child a {
+    margin-top: 40%;
+}
+
+#reviewGallery li:nth-child(3) {
+    border-top-right-radius: 0px;
+}
+
+#reviewGallery li:nth-child(4) {
+    border-bottom-left-radius: 0px;
+}
+
+#reviewCardList article {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#reviewCardList .br-restrictor br{
+    width: 100%;
+}
+
+.reviewer {
+    width: 50%;
+    font-style: italic;
+}
+
+.review-date {
+    width: 50%;
+    text-align: right;
+    color: #696969;
+}
+
+.review-star-container {
+    width: 100%;
+    display: flex;
+    margin: 4px 0 16px 0;
+}
+
+.review-star-green,
+.review-star-grey {
+    fill: #2B8C59;
+    width: 17px;
+    margin-right: .5em;
+
+}
+
+.review-date::after {
+    display: block;
+    content: " ";
+    width: 100%;
+}
+
+.review-title {
+    font-size: 1.125em;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.review-summary {
+    height: 3em;
+    overflow: hidden;
+    line-height: 150%;
+}
+
+.review-fade {
+    width: 10em;
+    position: absolute;
+    right: 0;
+    bottom: 0em;
+    display: inline-flex;
+    content: " ";
+    height: 1.5em;
+    background: rgb(168, 167, 162);
+    background: linear-gradient(to right, rgba(168, 167, 162, 0), rgba(168, 167, 162, 1), rgba(168, 167, 162, 1));
+}
+
+.review-read-more {
+    color: #2B8C59;
+    position: absolute;
+    margin-bottom: .25em;
+    right: 0;
+    bottom: 0;
+}
 
 /* [ON SMALL SCREENS] */
 @media screen and (max-width: 768px) {
     #aboutReview {
         width: 85%;
         padding: 1em 7.5% 0 7.5%;
+    }
+    #reviewGallery li {
+        flex-basis: 30%;
+        height: 0;
+        padding-bottom: 30%;
+        overflow: hidden;
+        margin-bottom: 2.5%;
+        background: #d6d6d6;
+    }
+    #reviewGallery li:first-child {
+        border-bottom-left-radius: 0;
+    }
+    
+    #reviewGallery li:last-child {
+        border-top-right-radius: 0px;
+    }
+    
+    #reviewGallery li:nth-child(3) {
+        border-top-right-radius: 20px;
+    }
+    
+    #reviewGallery li:nth-child(4) {
+        border-bottom-left-radius: 20px;
     }
 }
