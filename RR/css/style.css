@@ -206,7 +206,8 @@ small a:hover {
     color: white;
 }
 
-button, #addToCart {
+button,
+#addToCart {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     border-style: none;
@@ -218,11 +219,13 @@ button, #addToCart {
     margin-bottom: 1em;
 }
 
-button:active, #addToCart:active {
+button:active,
+#addToCart:active {
     border-style: none;
 }
 
-button:hover, #addToCart:hover {
+button:hover,
+#addToCart:hover {
     background: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
@@ -862,7 +865,8 @@ br {
 }
 
 .plus-minus:hover {
-    background: none;
+    background: rgba(255, 255, 255, .1);
+    cursor: pointer;
 }
 
 #productTotalPrice {
@@ -899,6 +903,10 @@ br {
 #aboutReview ul li {
     text-transform: uppercase;
     display: inline;
+}
+
+#aboutReviewMenu li:first-child{
+    margin-right: 3em;
 }
 
 #aboutReview ul li:hover {
@@ -978,7 +986,7 @@ br {
     position: relative;
 }
 
-#reviewCardList .br-restrictor br{
+#reviewCardList .br-restrictor br {
     width: 100%;
 }
 
@@ -1045,12 +1053,25 @@ br {
     bottom: 0;
 }
 
+.review-read-more:hover {
+    cursor: pointer;
+}
+
+.showing-more::after {
+    content: "collapse";
+}
+
+.collapsed::after {
+    content: "more";
+}
+
 /* [ON SMALL SCREENS] */
 @media screen and (max-width: 768px) {
     #aboutReview {
         width: 85%;
         padding: 1em 7.5% 0 7.5%;
     }
+
     #reviewGallery li {
         flex-basis: 30%;
         height: 0;
@@ -1059,18 +1080,19 @@ br {
         margin-bottom: 2.5%;
         background: #d6d6d6;
     }
+
     #reviewGallery li:first-child {
         border-bottom-left-radius: 0;
     }
-    
+
     #reviewGallery li:last-child {
         border-top-right-radius: 0px;
     }
-    
+
     #reviewGallery li:nth-child(3) {
         border-top-right-radius: 20px;
     }
-    
+
     #reviewGallery li:nth-child(4) {
         border-bottom-left-radius: 20px;
     }

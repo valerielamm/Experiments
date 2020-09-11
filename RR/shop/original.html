@@ -14,6 +14,7 @@
     <script src="../js/scripts.js"></script>
     <script src="../js/slideshow.js"></script>
     <script src="../js/toggleview.js"></script>
+    <script src="../js/reviewviewmore.js"></script>
 </head>
 
 <script>
@@ -110,7 +111,7 @@
             </section>
             <div class="br-restrictor"><br></div>
             <section id="aboutReview">
-                <ul>
+                <ul id="aboutReviewMenu">
                     <li onclick="toggleview(1)" class="underlinable">About</li>
                     <li onclick="toggleview(2)" class="underlinable">Reviews</li>
                 </ul>
@@ -176,7 +177,7 @@
                             <span class="review-summary">From start to finish the service was excellent. They answered all questions in a timely manner and the information was informative. The tree arrived in a quick time frame and in perfect condition. I plan on buying more trees in the future and will certainly buy them from this company.
                             </span>
                             <span class="review-fade"></span>
-                            <span class="review-read-more"><a tabindex="0">more</a></span>
+                            <span class="review-read-more"><a tabindex="0" onclick="reviewViewMore(this)" class="collapsed"></a></span>
                         </article>
                         <div class="br-restrictor"><br></div>
                         <article>
@@ -218,7 +219,7 @@
                                 stuff like this actually does work!
                             </span>
                             <span class="review-fade"></span>
-                            <span class="review-read-more"><a tabindex="0">more</a></span>
+                            <span class="review-read-more"><a tabindex="0" onclick="reviewViewMore(this)" class="collapsed"></a></span>
                         </article>
                     </div>
                 </div>
