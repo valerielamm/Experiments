@@ -176,7 +176,9 @@ footer ul li {
 }
 
 footer ul li a,
-footer ul li a:visited {
+footer ul li a:visited,
+.button-style,
+.button-style:visited {
     color: #A8A7A3;
     font-style: normal;
     text-decoration: none;
@@ -207,7 +209,8 @@ small a:hover {
 }
 
 button,
-#addToCart {
+#addToCart,
+.button-style {
     background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     border-style: none;
@@ -217,15 +220,18 @@ button,
     padding: .8em 1em;
     font-weight: 500;
     margin-bottom: 1em;
+    white-space: nowrap;
 }
 
 button:active,
-#addToCart:active {
+#addToCart:active,
+.button-style:active {
     border-style: none;
 }
 
 button:hover,
-#addToCart:hover {
+#addToCart:hover,
+.button-style:hover {
     background: rgba(0, 0, 0, 0.4);
     cursor: pointer;
 }
@@ -238,11 +244,20 @@ br {
     border-bottom: 1px solid #3F3F3F; // Works in Chrome/Safari
 }
 
+figure img {
+    display: block;
+}
+
 /* [ON SMALL SCREENS] */
 @media screen and (max-width: 768px) {
 
     footer {
         flex-direction: column;
+        text-align: center;
+    }
+
+    footer #connect {
+        align-self: center;
     }
 }
 
@@ -262,6 +277,10 @@ br {
     user-select: none;
     /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
+}
+
+.text-align-right {
+    text-align: right !important;
 }
 
 /* General _________________*/
@@ -629,6 +648,54 @@ br {
     color: rgba(0, 0, 0, .6);
 }
 
+#homeDescription {
+    position: relative;
+    background: #A8A7A3;
+}
+
+.flexbox-row-reverse,
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.flexbox-row-reverse {
+    flex-direction: row-reverse;
+}
+
+#collection br {
+    margin-top: 2em !important;
+}
+
+.full-forty {
+    position: relative;
+    width: 40%;
+    background: #A8A7A3;
+}
+
+.full-forty p {
+    margin: 2em 10% 2em 10%;
+    line-height: 1.5em;
+}
+
+.full-forty h2 {
+    margin: 2em 10% 1em 10%;
+    font-size: 1.5em;
+}
+
+.full-forty a {
+    margin: 2em 10% 2em 10%;
+    display: inline-block;
+}
+
+.full-sixty {
+    position: relative;
+    width: 60%;
+    background: #A8A7A3;
+    object-fit: cover;
+}
+
 /* Shop Page ____________ */
 
 .product-container {
@@ -721,6 +788,12 @@ br {
 
     .product-container .product-card:nth-child(1) {
         width: 80%;
+    }
+
+    .full-sixty,
+    .full-forty {
+        width: 100%;
+        text-align: center !important;
     }
 }
 
@@ -905,7 +978,7 @@ br {
     display: inline;
 }
 
-#aboutReviewMenu li:first-child{
+#aboutReviewMenu li:first-child {
     margin-right: 3em;
 }
 
