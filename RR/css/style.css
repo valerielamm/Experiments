@@ -685,7 +685,7 @@ figure img {
 }
 
 .full-forty a {
-    margin: 2em 10% 2em 10%;
+    margin: 1em 10% 2em 10%;
     display: inline-block;
 }
 
@@ -827,6 +827,10 @@ figure img {
     display: none
 }
 
+.mySlides-one {
+    display: block;
+}
+
 .w3-badge {
     display: inline-block;
     padding-left: 8px;
@@ -843,6 +847,11 @@ figure img {
 .w3-badge:hover {
     background-color: #ebebeb !important;
     cursor: pointer;
+}
+
+.w3-badge:active,
+.w3-badge:focus {
+    background-color: #ebebeb !important;
 }
 
 .center-circles {
@@ -987,6 +996,11 @@ figure img {
     color: #ebebeb;
 }
 
+#aboutReview ul li:active {
+    cursor: pointer;
+    color: black;
+}
+
 #aboutReview p {
     margin-top: 2em;
     line-height: 150%;
@@ -1066,6 +1080,7 @@ figure img {
 .reviewer {
     width: 50%;
     font-style: italic;
+    margin-bottom: 4px;
 }
 
 .review-date {
@@ -1077,7 +1092,7 @@ figure img {
 .review-star-container {
     width: 100%;
     display: flex;
-    margin: 4px 0 16px 0;
+    margin: 0;
 }
 
 .review-star-green,
@@ -1098,6 +1113,7 @@ figure img {
     font-size: 1.125em;
     font-weight: 600;
     margin-bottom: 8px;
+    margin-top: 16px;
 }
 
 .review-summary {
