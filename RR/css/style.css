@@ -694,6 +694,8 @@ figure img {
     width: 60%;
     background: #A8A7A3;
     object-fit: cover;
+    display: block;
+    height: 100%;
 }
 
 /* Shop Page ____________ */
@@ -1093,6 +1095,11 @@ figure img {
     width: 100%;
     display: flex;
     margin: 0;
+    height: 22px;
+}
+
+.review-star-container svg {
+    display: block;
 }
 
 .review-star-green,
