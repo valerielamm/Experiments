@@ -797,6 +797,10 @@ figure img {
         width: 100%;
         text-align: center !important;
     }
+
+    #splashVid {
+        height: 45em;
+    }
 }
 
 /*Product Page __________________________________________*/
@@ -1014,6 +1018,7 @@ figure img {
 
 #reviews {
     margin-top: 2em;
+    display: none;
 }
 
 #reviewGallery li a img,
